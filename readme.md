@@ -22,8 +22,8 @@ Simple plugin for pagination with radio input
 ```javascript
 $(document).ready(function(){
   $('#container').simplePagination({
-    current: 7
-    count: 14
+    current: 7,
+    count: 14,
     name: 'page'
   });
   $('#container input[name=page]').change(function() {
