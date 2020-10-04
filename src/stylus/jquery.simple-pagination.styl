@@ -1,0 +1,67 @@
+color_primary = #0074d9
+color_thin = #E5EAEC
+color_disabled = #B3BFC7
+pagination_button_size = 24px
+
+@keyframes simple-pagination-animation
+	from
+		opacity 0
+		transform translate3d(0, 10px, 0)
+	to
+		opacity 1
+		transform translate3d(0, 0, 0)
+
+.simple-pagination
+	display inline-flex
+	width auto
+	&__button
+		padding 0
+		cursor pointer
+		display block
+		width pagination_button_size
+		height pagination_button_size
+		color color_primary
+		font-weight 700
+		background-color transparent
+		border none
+		line-height pagination_button_size
+		text-align center
+		font-size (13 / 16em)
+		user-select none
+		&:focus
+			outline 0
+		&--disable
+			color color_disabled
+	&__spred
+		position relative
+	&__select
+		display none
+		position absolute
+		top pagination_button_size
+		left 0
+		z-index 100
+		&--active
+			display block
+			animation simple-pagination-animation .25s 1
+
+.simple-pagination-radio
+	display block
+	width 0
+	height 0
+	overflow hidden
+	visibility hidden
+
+.simple-pagination-select
+	height auto
+	max-height (pagination_button_size * 3)
+	background-color #fff
+	border 1px solid color_thin
+	overflow-y auto
+	overflow-x hidden
+	-webkit-overflow-scrolling touch
+	&::-webkit-scrollbar
+		width 6px
+	&::-webkit-scrollbar-track
+		background-color color_thin
+	&::-webkit-scrollbar-thumb
+		background-color color_primary
