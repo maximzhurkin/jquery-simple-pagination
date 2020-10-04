@@ -9,9 +9,9 @@ Simple plugin for pagination with radio input
 ### Include styles & scripts
 ```html
 <head>
-    <link href="jquery-simple-pagination.min.css" rel="stylesheet">
+    <link href="jquery.simple-pagination.min.css" rel="stylesheet">
     <script src="jquery.min.js"></script>
-    <script src="jquery-simple-pagination.min.js"></script>
+    <script src="jquery.simple-pagination.min.js"></script>
 </head>
 ```
 ### Add container for pagination
