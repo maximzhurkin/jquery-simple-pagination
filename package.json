@@ -1,6 +1,6 @@
 {
   "name": "jquery-simple-pagination",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple jquery plugin for pagination with radio input",
   "main": "dist/js/jquery.simple-pagination.js",
   "scripts": {},

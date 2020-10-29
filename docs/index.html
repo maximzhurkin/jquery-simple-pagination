@@ -1,33 +1,36 @@
-<!DOCTYPE html><head><meta charset="utf-8"><meta name="description" content=""><meta name="keywords" content=""><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta content="telephone=no" name="format-detection"><!-- if IE meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')--><!-- if lt IE 9 script(src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js')--><title>jQuery plugin for ...</title><link href="favicon.ico" rel="shortcut icon" type="image/x-icon"><link href="css/example.min.css" rel="stylesheet"><link href="css/jquery.simple-pagination.min.css" rel="stylesheet"></head><body><header class="header"><div class="header__container"><div class="header__heading">jQuery Simple Pagination</div><div class="header__description">Simple plugin for pagination with radio input</div><div class="header__size">5kb (3kb JS & 2kb CSS)</div><div class="header__links"><div class="header__link"><a class="link" href="https://github.com/maximzhurkin/jquery-simple-pagination/archive/master.zip">Download</a></div><div class="header__link"><a class="link" href="https://github.com/maximzhurkin/jquery-simple-pagination">Github</a></div></div></div></header><section class="demo"><div class="demo__container"><div class="demo__heading">Demo</div><div class="demo__content"><div id="example-one"></div></div></div></section><section class="usage"><div class="usage__container"><div class="usage__heading">Usage</div><div class="usage__content"><p><strong>Include jquery.simple-pagination.css to head</strong></p><p><pre>&lt;link href=&quot;/dist/css/jquery.simple-pagination.min.css&quot; rel=&quot;stylesheet&quot;&gt;</pre></p><p><strong>Include jQuery and SimplePagination</strong></p><p><pre>&lt;script src=&quot;http://code.jquery.com/jquery-latest.min.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;/dist/js/jquery.simple-pagination.min.js&quot;&gt;&lt;/script&gt;</pre></p><p><strong>Add container for pagination</strong></p><p><pre>&lt;div id=&quot;container&quot;&gt;&lt;/div&gt;</pre></p><p><strong>Initialize plugin</strong></p><p><pre>$(document).ready(function(){
-    $('#container').simplePagination({
-        current: 7
-        count: 14
-        name: 'page'
-    });
+<!DOCTYPE html><head><meta charset="utf-8"><meta name="description" content=""><meta name="keywords" content=""><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta content="telephone=no" name="format-detection"><!-- if IE meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')--><!-- if lt IE 9 script(src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js')--><title>Simple plugin for pagination with radio input</title><link href="favicon.ico" rel="shortcut icon" type="image/x-icon"><link href="css/example.min.css" rel="stylesheet"><link href="css/jquery.simple-pagination.min.css" rel="stylesheet"></head><body><header class="header"><div class="header__container"><div class="header__heading">jQuery Simple Pagination</div><div class="header__description">Simple plugin for pagination with radio input</div><div class="header__size">5kb (3kb JS & 2kb CSS)</div><div class="header__links"><div class="header__link"><a class="link" href="https://github.com/maximzhurkin/jquery-simple-pagination/archive/master.zip">Download</a></div><div class="header__link"><a class="link" href="https://github.com/maximzhurkin/jquery-simple-pagination">Github</a></div></div></div></header><section class="demo"><div class="demo__container"><div class="demo__heading">Demo</div><div class="demo__content"><div id="example-one"></div></div><div class="demo__content"><a class="link link--dotted" href="#" data-action="set-prev">Set prev</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="link link--dotted" href="#" data-action="set-page">Set 1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="link link--dotted" href="#" data-action="set-next">Set next</a></div></div></section><section class="usage"><div class="usage__container"><div class="usage__heading">Usage</div><div class="usage__content"><p><strong>Include jquery.simple-pagination.css to head</strong></p><p><pre>&lt;link href=&quot;/dist/css/jquery.simple-pagination.min.css&quot; rel=&quot;stylesheet&quot;&gt;</pre></p><p><strong>Include jQuery and SimplePagination</strong></p><p><pre>&lt;script src=&quot;http://code.jquery.com/jquery-latest.min.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;/dist/js/jquery.simple-pagination.min.js&quot;&gt;&lt;/script&gt;</pre></p><p><strong>Add container for pagination</strong></p><p><pre>&lt;div id=&quot;container&quot;&gt;&lt;/div&gt;</pre></p><p><strong>Initialize plugin</strong></p><p><pre>$(document).ready(function(){
+  $('#container').simplePagination({
+    current: 7
+    count: 14
+    name: 'page'
+  });
 });</pre></p><p><strong>After init plugin add in container this html:</strong></p><p><pre>&lt;!-- &lt;div id=&quot;container&quot;&gt; --&gt;
-    &lt;div class=&quot;simple-pagination&quot;&gt;...&lt;/div&gt;
-    &lt;div class=&quot;simple-pagination-radio&quot;&gt;
-        &lt;input type=&quot;radio&quot; name=&quot;page&quot; value=&quot;1&quot;&gt;
-        &lt;input type=&quot;radio&quot; name=&quot;page&quot; value=&quot;2&quot;&gt;
-        ...
-        &lt;input type=&quot;radio&quot; name=&quot;page&quot; value=&quot;14&quot;&gt;
-    &lt;/div&gt;
+  &lt;div class=&quot;simple-pagination&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;simple-pagination-radio&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;page&quot; value=&quot;1&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;page&quot; value=&quot;2&quot;&gt;
+    ...
+    &lt;input type=&quot;radio&quot; name=&quot;page&quot; value=&quot;14&quot;&gt;
+  &lt;/div&gt;
 &lt;!-- &lt;/div&gt; --&gt;</pre></p><p><strong>Init and subscribe to changes</strong></p><p><pre>$(document).ready(function(){
-    $('#container').simplePagination({
-        current: 7,
-        count: 14,
-        name: 'page'
-    });
-    $('#container input[name=page]').change(function() {
-        console.log($(this).val());
-    });
+  var example = $('#container').simplePagination({
+    current: 7,
+    count: 14,
+    name: 'page'
+  });
+  $('#container input[name=page]').change(function() {
+    console.log($(this).val());
+  });
+  $('#prev').click(function() { example.setPrevPage(); });
+  $('#next').click(function() { example.setNextPage(); });
+  $('#reset').click(function() { example.setPage(1); });
 });</pre></p></div></div></section><section class="demo"><div class="demo__container"><div class="demo__heading">Init with "mirrorContainer"</div><div class="demo__content"><div class="catalog-pagination"><div class="catalog-pagination__top" data-name="pagination" data-current="1" data-count="14"></div><div class="catalog-pagination__items"><div class="catalog-pagination__item"><div class="catalog-pagination-item"></div></div><div class="catalog-pagination__item"><div class="catalog-pagination-item"></div></div><div class="catalog-pagination__item"><div class="catalog-pagination-item"></div></div><div class="catalog-pagination__item"><div class="catalog-pagination-item"></div></div><div class="catalog-pagination__item"><div class="catalog-pagination-item"></div></div><div class="catalog-pagination__item"><div class="catalog-pagination-item"></div></div><div class="catalog-pagination__item"><div class="catalog-pagination-item"></div></div><div class="catalog-pagination__item"><div class="catalog-pagination-item"></div></div><div class="catalog-pagination__item"><div class="catalog-pagination-item"></div></div><div class="catalog-pagination__item"><div class="catalog-pagination-item"></div></div><div class="catalog-pagination__item"><div class="catalog-pagination-item"></div></div><div class="catalog-pagination__item"><div class="catalog-pagination-item"></div></div></div><div class="catalog-pagination__bottom"></div></div></div><div class="demo__content"><p><pre>&lt;div id=&quot;container&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;catalog&quot;&gt;...&lt;/div&gt;
 &lt;div id=&quot;mirror&quot;&gt;&lt;/div&gt;</pre></p><p><pre>$(document).ready(function(){
-    $('#container').simplePagination({
-        current: 7,
-        count: 14,
-        name: 'page',
-        mirrorContainer: '#mirror'
-    });
+  $('#container').simplePagination({
+    current: 7,
+    count: 14,
+    name: 'page',
+    mirrorContainer: '#mirror'
+  });
 });</pre></p></div></div></section><footer class="footer"><div class="footer__container"><div class="footer__copyright">jQuery Simple Pagination plugin by Max Zhurkin.</div><div class="footer__links"><div class="footer__link"><a class="github-button" href="https://github.com/maximzhurkin" aria-label="Follow @maximzhurkin on GitHub">Follow @maximzhurkin</a></div><div class="footer__link"><a class="github-button" href="https://github.com/maximzhurkin/jquery-simple-pagination" data-icon="octicon-star" aria-label="Star maximzhurkin/jquery-simple-pagination on GitHub">Star</a></div><div class="footer__link"><a class="github-button" href="https://github.com/maximzhurkin/jquery-simple-pagination/fork" data-icon="octicon-repo-forked" aria-label="Fork maximzhurkin/jquery-simple-pagination on GitHub">Fork</a></div><div class="footer__link"><a class="github-button" href="https://github.com/maximzhurkin/jquery-simple-pagination/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download maximzhurkin/jquery-simple-pagination on GitHub">Download</a></div></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script><script src="https://buttons.github.io/buttons.js"></script><script src="js/jquery.simple-pagination.min.js"></script><script src="js/example.min.js"></script></body>

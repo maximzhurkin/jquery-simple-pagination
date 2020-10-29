@@ -149,6 +149,7 @@
 			return spred
 
 	jQuery.fn.simplePagination = (options) ->
+		el = this
 		options = $.extend({
 			current: 1
 			count: 14
@@ -156,7 +157,23 @@
 			mirrorContainer: ''
 		}, options)
 		methods.init this, options
-		return
+		{ 
+			setNextPage: ->
+				if options.current < options.count
+					options.current = options.current + 1
+					methods.init el, options
+				return
+			setPrevPage: ->
+				if options.current > 1
+					options.current = options.current - 1
+					methods.init el, options
+				return
+			setPage: (page) ->
+				if page >= 1 and page <= options.count
+					options.current = page
+					methods.init el, options
+				return
+		}
 
 	return
 ) jQuery

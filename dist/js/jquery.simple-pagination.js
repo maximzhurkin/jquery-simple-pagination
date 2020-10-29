@@ -149,6 +149,8 @@
     }
   };
   jQuery.fn.simplePagination = function(options) {
+    var el;
+    el = this;
     options = $.extend({
       current: 1,
       count: 14,
@@ -156,5 +158,25 @@
       mirrorContainer: ''
     }, options);
     methods.init(this, options);
+    return {
+      setNextPage: function() {
+        if (options.current < options.count) {
+          options.current = options.current + 1;
+          methods.init(el, options);
+        }
+      },
+      setPrevPage: function() {
+        if (options.current > 1) {
+          options.current = options.current - 1;
+          methods.init(el, options);
+        }
+      },
+      setPage: function(page) {
+        if (page >= 1 && page <= options.count) {
+          options.current = page;
+          methods.init(el, options);
+        }
+      }
+    };
   };
 })(jQuery);
